@@ -4,12 +4,16 @@
   <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Css</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
 
     <style>
       img[alt='a'] {
+        width: 100px;
+      }
+      img[alt='b'] {
         width: 100px;
       }
 
@@ -18,50 +22,65 @@
         outline: none;
       }
 
-      p[a='g'] {
-        color: red;
-      }
-      .bx>h1{
-        color:red;
-      }
-      .c-bx>h1{
-        color:aqua;
-      }
-      li:nth-child(odd){
-        color:red;
-      }
-      
-      button:hover{
-        color:blueviolet;
+      * {
+        margin: 0;
+        padding: 0;
       }
 
-      img[
-        alt='a'
-      ]{width: 100px;}
-      img[
-        alt='b'
-      ]{width: 100px;}
-      input[
-        type='text']{background-color: black;}
-        input[type='text'];:focus{
-            border:1px solid  red;
-        }
+      p::before {
+        content: 'Highlight ';
+        color: red;
+        font-size: 20px;
+      }
+
+      p::after {
+        content: 'Highlight ';
+        color: red;
+        font-size: 20px;
+      }
+
+      #d {
+        color: green;
+        font-size: 20px;
+      }
+      p {
+         text-align: right; 
+         text-transform: uppercase; 
+         line-height: 20px; 
+         letter-spacing: 5px; 
+         word-spacing: 15px; 
+         font-size: 1rem; 
+         font-size: 1em; 
+
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+      * {
+         margin: 0;
+        padding: 0; 
+      }
+
+
+      p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        p{
+            font-family: 'poppins';
+            font-size: 1.2rem;
     </style>
 
+  </head>
+
   <body>
-     
-    <ol>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-     </ol>
-    <div class="bx">
- <h1>hello ji</h1>
- <div class="c-bx">
-  <h1>sorry</h1>
- </div>
-</div>
+
+    <h1>hello jee</h1>
+
+    <p>Lorem ipsum <span id="d">dolor</span> sit amet consectetur adipisicing elit. Exercitationem enim atque adipisci
+      nam! Mollitia ut
+      aliquid quia ducimus  recusandae est commodi nam, optio error velit quibusdam totam ratione maxime aperiam.</p>
+
 
     <p a="g">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, quae.</p>
     <input type="text">
