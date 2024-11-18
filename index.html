@@ -10,90 +10,63 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
 
     <style>
-      img[alt='a'] {
-        width: 100px;
-      }
-      img[alt='b'] {
-        width: 100px;
-      }
-
-      input[type='text']:focus {
-        border: 1px solid red;
-        outline: none;
-      }
-
+      
       * {
         margin: 0;
         padding: 0;
-      }
-
-      p::before {
-        content: 'Highlight ';
-        color: red;
-        font-size: 20px;
-      }
-
-      p::after {
-        content: 'Highlight ';
-        color: red;
-        font-size: 20px;
-      }
-
-      #d {
-        color: green;
-        font-size: 20px;
-      }
-      p {
-         text-align: right; 
-         text-transform: uppercase; 
-         line-height: 20px; 
-         letter-spacing: 5px; 
-         word-spacing: 15px; 
-         font-size: 1rem; 
-         font-size: 1em; 
-
-         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
-
-      * {
-         margin: 0;
-        padding: 0; 
+        box-sizing: border-box;
       }
 
 
-      p {
-        font-family: "Roboto", sans-serif;
-        font-weight: 900;
+      .pa {
+        height: 300px;
+        width: 500px;
+        border: 1px solid black;
+        position: relative;
+      }
+
+      .bx {
+        height: 80px;
+        width: 80px;
+        background-color: red;
+        position: absolute;
+        bottom:1px;
 
       }
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        p{
-            font-family: 'poppins';
-            font-size: 1.2rem;
+      .bx1 {
+        left: 200px;
+        height: 80px;
+        width: 80px;
+        background-color: blue;
+        position: absolute;
+        bottom:100px;
+
+      }
+      .bx2 {
+left: 200px;
+        height: 80px;
+        width: 80px;
+        background-color: green;
+        position: absolute;
+        bottom:100px;
+
+      }
+
     </style>
 
   </head>
 
   <body>
 
-    <h1>hello jee</h1>
-
-    <p>Lorem ipsum <span id="d">dolor</span> sit amet consectetur adipisicing elit. Exercitationem enim atque adipisci
-      nam! Mollitia ut
-      aliquid quia ducimus  recusandae est commodi nam, optio error velit quibusdam totam ratione maxime aperiam.</p>
-
-
-    <p a="g">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, quae.</p>
-    <input type="text">
-    <input type="email">
-    <br>
-    <br>
-
-
-<button>Click me</button>
-<img src="https://media.istockphoto.com/id/1051289388/photo/closed-door-of-building.webp?a=1&s=612x612&w=0&k=20&c=aiydL8Srej1fYYm9nNGhEPiFzBUW9rJ1vi7sgbVxkns=" alt="a">
-
-
-<img src="https://images.unsplash.com/photo-1731412468777-79db0b37cfda?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8" alt="b">
+    <div class="pa">
+      <div class="bx">
+        <div class="bx1">
+          <div class="bx2"></div>
+        </div>
+      </div>
+          </div>
+   
+    
 
 
 
