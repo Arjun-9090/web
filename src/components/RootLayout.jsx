@@ -7,7 +7,7 @@ const RootLayout = () => {
 
       <Header />
 
-      <main className="px-14 ">
+      <main>
         <Outlet />
       </main>
 
