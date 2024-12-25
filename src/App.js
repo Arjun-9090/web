@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router"
 import { RouterProvider } from "react-router-dom";
-import Home from "./home/Home";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import ContactUs from "./pages/Contact";
 import RootLayout from "./components/RootLayout";
-import Tech from "./home/Tech";
-import DisPlaySec from "./home/DisPlaySec";
-import ProductCard from "./components/ProductCard";
+
 const App = () => {
 
   const router = createBrowserRouter([
@@ -28,18 +26,6 @@ const App = () => {
         {
           path: 'Contact',
           element: <ContactUs />
-        },
-        {
-          path: 'Tech',
-          element: <Tech />
-        },
-        {
-          path: 'DisPlaySec',
-          element: <DisPlaySec />
-        },
-        {
-          path: 'ProductCard',
-          element: <ProductCard />
         }
       ]
     }
