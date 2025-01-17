@@ -11,3 +11,4 @@ export const blogSlice = createSlice({
     }
   }
 });
+export const { addBlog } = blogSlice.actions;
