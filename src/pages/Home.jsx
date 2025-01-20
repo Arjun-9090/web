@@ -1,134 +1,37 @@
-import { Button, Input, Option, Select } from '@material-tailwind/react';
-import axios from 'axios';
-import { Formik } from 'formik';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { BlogCard } from '../components/BlogCard';
+import SearchBlog from '../components/SearchBlog';
 
 const Home = () => {
 
 
+  const posts = [
+    { id: 1, title: 'hello' },
+    { id: 2, title: 'sello' },
+  ];
 
+  // const somes = posts.map((post) => post.id === 1 ? { id: 1, title: 'kello' } : post);
+  // console.log(somes);
 
-  const [data, setData] = useState();
-  const [category, setCategory] = useState('beauty');
-  const [err, setErr] = useState();
-
-
-  const getData = async () => {
-    try {
-      const response = await axios.get(`https://dummyjson.com/products/category/${category}`);
-      setData(response.data);
-
-      console.log(response.data);
-    } catch (err) {
-
-      setErr(err.message);
-
-    }
-
-  }
-
-
-  useEffect(() => {
-    getData();
-
-  }, [category]);
-
-
-
-
-  if (err) {
-    return <h1>{err}</h1>
-  }
+  const { blogs } = useSelector((state) => state.blogSlice);
 
 
   return (
-    <div className='p-10 max-w-[400px]'>
+    <div>
+      <SearchBlog />
 
-      <Formik
+      <div className='p-5 grid grid-cols-3 gap-5'>
+        {blogs.length === 0 && <h1>Try to add blog</h1>}
+        {
+          blogs.map((blog, i) => {
+            return <BlogCard blog={blog} key={blog.id} index={i} />
+          })
+        }
 
-        initialValues={{
-          category: ''
-        }}
-        onSubmit={(val, { resetForm }) => {
-          setCategory(() => val.category);
-          resetForm();
-        }}
-
-      >
-
-        {({ handleChange, handleSubmit, values, errors, setFieldValue }) => (
-          <form onSubmit={handleSubmit} className='grid grid-cols-3 gap-4'>
-            <div className='col-span-2'>
-
-              <Select
-                name='category'
-                onChange={(e) => setCategory(e)}
-                label='select category'>
-                {categories.map((cata, i) => {
-                  return <Option key={i} value={cata}>{cata}</Option>
-                })}
-              </Select>
-
-
-              {/* <Input
-
-                name='category'
-                onChange={handleChange}
-                value={values.category}
-                label='category search' /> */}
-            </div>
-
-            <Button type='submit' variant='filled'>Submit</Button>
-
-          </form>
-        )}
-      </Formik>
-
-      {data && data.products.map((product) => {
-        return <div key={product.id}>
-          <img src={product.thumbnail} alt="" />
-          <h1>{product.title}</h1>
-          <p>{product.descriptioon}</p>
-
-        </div>
-      })}
-
-
-
-
+      </div>
     </div>
   )
 }
 
 export default Home
-
-
-
-const categories = [
-  "beauty",
-  "fragrances",
-  "furniture",
-  "groceries",
-  "home-decoration",
-  "kitchen-accessories",
-  "laptops",
-  "mens-shirts",
-  "mens-shoes",
-  "mens-watches",
-  "mobile-accessories",
-  "motorcycle",
-  "skin-care",
-  "smartphones",
-  "sports-accessories",
-  "sunglasses",
-  "tablets",
-  "tops",
-  "vehicle",
-  "womens-bags",
-  "womens-dresses",
-  "womens-jewellery",
-  "womens-shoes",
-  "womens-watches"
-];
-//creat slice
-//creat api 

@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router"
 import { RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import ContactUs from "./pages/Contact";
 import RootLayout from "./components/RootLayout";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import AddForm from "./pages/AddForm";
+import EditForm from "./pages/EditForm";
+
 
 const App = () => {
 
@@ -13,22 +15,29 @@ const App = () => {
       path: '/',
       element: <RootLayout />,
       children: [
+
         {
           index: true,
           element: <Home />
+        },
+        {
+          path: 'add-form',
+          element: <AddForm />
+        },
+        {
+          path: 'edit-form/:id',
+          element: <EditForm />
         },
 
         {
           path: 'about',
           element: <About />
-
-        },
-        {
-          path: 'Contact',
-          element: <ContactUs />
         }
+
+
       ]
     }
+
   ]);
 
 
